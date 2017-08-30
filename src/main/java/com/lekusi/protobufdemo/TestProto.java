@@ -12,13 +12,13 @@ import java.io.IOException;
 /**
  * Protobuf 测试类
  * 使用步骤：
- * 1、编写*.proto文件
- * 1、下载protoc-3.3.0-win32，
- * 2、使用bin下的protoc.exe生成所需语言的实体类
+ * 1、下载protoc-3.3.0-win32
+ * 2、编写*.proto文件
+ * 3、使用bin下的protoc.exe生成所需语言的实体类
  *    cmd：protoc --java_out=[文件路径] [文件名]
- * 3、将生成的实体类拷贝至项目中
- * 4、添加protobuf-java-***.jar依赖包
- * 5、使用如下代码进行读写测试
+ * 4、将生成的实体类拷贝至项目中
+ * 5、添加protobuf-java-***.jar依赖包
+ * 6、使用如下代码进行读写测试
  * <p>
  * Created by Jack.Yan on 2017/8/8.
  */
@@ -90,14 +90,14 @@ public class TestProto {
     private static CompanyProto.Compay createComay(){
         return CompanyProto.Compay.newBuilder()
                 .setId(1)
-                .setName("琦彩科技")
-                .setAddress("环球中心S1-1213")
-                .addContact("028-66666660")
-                .addContact("028-66666661")
-                .setWebsite("www.ie-colorful.com")
+                .setName("Global Company")
+                .setAddress("any where")
+                .addContact("66666660")
+                .addContact("66666661")
+                .setWebsite("www.google.com")
                 .setType(CompanyProto.Compay.TYPE.PRIVATE)
-                .addStaffs(CompanyProto.Staff.newBuilder().setId(10001).setUserName("张三").setSex(CompanyProto.Staff.SEX.MALE).setAge(28).setDepartment("Dev").setJob("Android").addPhoneNums("15812345678").build())
-                .addStaffs(CompanyProto.Staff.newBuilder().setId(10001).setUserName("李四").setSex(CompanyProto.Staff.SEX.FEMALE).setAge(32).setDepartment("行政").setJob("人事").addPhoneNums("15899999999").addPhoneNums("15899999900").build())
+                .addStaffs(CompanyProto.Staff.newBuilder().setId(10001).setUserName("Peter Jeff").setSex(CompanyProto.Staff.SEX.MALE).setAge(28).setDepartment("Dev").setJob("Java").addPhoneNums("05812345678").build())
+                .addStaffs(CompanyProto.Staff.newBuilder().setId(10001).setUserName("Jack Allen").setSex(CompanyProto.Staff.SEX.FEMALE).setAge(32).setDepartment("HR").setJob("manager").addPhoneNums("05899999999").addPhoneNums("05899999900").build())
                 .build();
     }
 
