@@ -1,0 +1,35 @@
+syntax = "proto3";//需设置protobuf版本，proto2与proto3有很大差异
+package com.lekusi.protobufdemo;
+option java_package ="com.lekusi.protobufdemo";//生成的文件夹路径（包名）
+option java_outer_classname="CompanyProto";//生成.Java文件的名字
+message Compay{//公司
+    int32 id=1;//ID
+    string name=2;//公司名
+    string address=3;//公司地址
+    string website=4;//公司网址
+    repeated string contact=5;//公司联系电话
+    enum TYPE{//公司类型，枚举编号必需从0开始
+        PRIVATE = 0;//私企
+        STATE = 1;//国营
+        LISTED = 2;//上市
+        STARTUP = 3;//创业
+        FOREIGN = 4;//外资
+        JOINT = 5;//合资
+    }
+    TYPE type=6;
+    repeated Staff staffs=7;
+}
+message Staff{//员工
+    int32 id=1;//ID
+    string userName=2;//姓名
+    enum SEX{
+        OTHER=0;
+        MALE=1;
+        FEMALE=2;
+    }
+    SEX sex=3;//性别
+    int32 age=4;//年龄
+    string job=5;//职位
+    string department=6;//部门
+    repeated string phoneNums=7;//联系电话
+}
