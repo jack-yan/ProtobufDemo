@@ -24,7 +24,7 @@ import java.io.IOException;
  */
 public class TestProto {
     public static void main(String[] args) {
-//        write2File("F:/", "Company.dat", createComay());//将对象数据写入文件
+//        writeFile("F:/", "Company.dat", createComay());//将对象数据写入文件
         System.out.println(readFile("F:/","Company.dat"));//从文件读数据至对象
     }
 
@@ -34,7 +34,7 @@ public class TestProto {
      * @param fileName 文件名
      * @param bean 实体类
      */
-    private static void write2File(String filePath,String fileName,GeneratedMessageV3 bean){
+    private static void writeFile(String filePath,String fileName,GeneratedMessageV3 bean){
         File file=new File(filePath,fileName);
         try {
             FileOutputStream fos = new FileOutputStream(file);
